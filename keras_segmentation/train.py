@@ -45,6 +45,14 @@ class CheckpointsCallback(Callback):
     def on_epoch_end(self, epoch, logs=None):
         if self.checkpoints_path is not None:
             self.model.save_weights(self.checkpoints_path + "." + str(epoch))
+            if (epoch > 0):
+                willDeletePath = self.checkpoints_path + "." + str(epoch - 1)
+                try:
+                    os.remove(willDeletePath)
+                    print("% s removed successfully" % willDeletePath)
+                except OSError as error:
+                    print(error)
+                    print("File path can not be removed")
             print("saved ", self.checkpoints_path + "." + str(epoch))
 
 
