@@ -5,6 +5,7 @@ import glob
 import six
 from keras.callbacks import Callback
 import tensorflow as tf
+import os
 
 
 def find_latest_checkpoint(checkpoints_path, fail_safe=True):
