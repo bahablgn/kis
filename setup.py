@@ -2,14 +2,14 @@ from setuptools import find_packages, setup
 
 
 setup(name="kis",
-      version="0.7.0",
+      version="0.8.0",
       description="Image Segmentation toolkit for keras edited for work",
       author="Baha",
       author_email='bahablgn@gmail.com',
       platforms=["any"],  # or more specific, e.g. "win32", "cygwin", "osx"
       license="GPLv3",
       url="https://github.com/bahablgn/kis",
-      download_url = 'https://github.com/bahablgn/kis/archive/v_07.tar.gz',
+      download_url = 'https://github.com/bahablgn/kis/archive/v_08.tar.gz',
       packages=find_packages(exclude=["test"]),
       entry_points={
             'console_scripts': [
