@@ -45,7 +45,7 @@ class CheckpointsCallback(Callback):
 
     def on_epoch_end(self, epoch, logs=None):
         if self.checkpoints_path is not None:
-            self.model.save_weights(self.checkpoints_path + "." + str(epoch))
+            self.model.save_weights(self.checkpoints_path + "." + str(epoch), overwrite=True, save_format='h5')
             if (epoch > 0):
                 willDeletePath = self.checkpoints_path + "." + str(epoch - 1)
                 try:
